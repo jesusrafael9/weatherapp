@@ -1,0 +1,38 @@
+openapi: 3.0.1
+info:
+  title: Weather API
+  version: '1.0'
+  description: API para obtener datos del clima.
+paths:
+  /weather/{location}:
+    get:
+      summary: Obtener datos del clima por ubicación
+      parameters:
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Datos del clima retornados exitosamente.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cloudCover:
+                    type: number
+                    format: float
+                  humidity:
+                    type: number
+                    format: float
+                  temperature:
+                    type: number
+                    format: float
+                  uvIndex:
+                    type: number
+                    format: float
+                  windSpeed:
+                    type: number
+                    format: float
