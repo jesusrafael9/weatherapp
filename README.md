@@ -1,4 +1,4 @@
-# Proyecto Kotlin/Java con Gradle
+# Proyecto Weatherapp
 
 ## Requerimientos
 
@@ -11,8 +11,8 @@
 
 1. Clona el repositorio:
     ```sh
-    git clone <URL_DEL_REPOSITORIO>
-    cd <NOMBRE_DEL_REPOSITORIO>
+    git clone https://github.com/jesusrafael9/weatherapp.git
+    cd weatherapp
     ```
 
 2. Compila y levanta los contenedores:
@@ -42,6 +42,6 @@
 
 ## Documentación
 
-La documentación de la API está disponible en Swagger. Puedes acceder a ella en el siguiente enlace:
+La documentación de la API está disponible en Redoc. Puedes acceder a ella en el siguiente enlace:
 
-[Documentación Swagger](http://localhost:8080/swagger-ui.html)
+[Visualiza la documentación en Redoc Editor](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/jesusrafael9/weatherapp/refs/heads/main/docs/weatherapp-openapi.yaml)
