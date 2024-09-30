@@ -8,6 +8,10 @@ import weatherapp.services.RedisClient
 
 fun Application.configureRouting() {
     routing {
+        get("/") {
+            call.respondText("is running")
+        }
+
         get("/weather/{location}") {
             val location = call.parameters["location"]
             if (location != null) {
