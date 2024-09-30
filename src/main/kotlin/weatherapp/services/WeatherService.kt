@@ -16,18 +16,7 @@ object WeatherService {
     private val client = HttpClient()
 
     private val apiKey: String by lazy {
-        val properties = Properties()
-        // Verificar si el archivo existe en la ruta del contenedor
-        val filePathInContainer = "/app/resources/apikey.properties"
-        val filePathLocal = "src/main/resources/apikey.properties"
-        val file = if (File(filePathInContainer).exists()) {
-            File(filePathInContainer)  // Ruta en el contenedor
-        } else {
-            File(filePathLocal)  // Ruta local para desarrollo
-        }
-
-        properties.load(file.inputStream())
-        properties.getProperty("apiKey") ?: throw IllegalStateException("API Key not found")
+        System.getenv("API_KEY") ?: throw IllegalStateException("API Key not found")
     }
 
     suspend fun fetchWeather(location: String): WeatherValues {
