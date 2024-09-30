@@ -6,7 +6,9 @@ import weatherapp.dto.WeatherValues
 import kotlinx.serialization.json.Json
 
 object RedisClient {
-    private val jedis = Jedis("redis", 6379)
+    private val redisHost = System.getenv("REDIS_HOST") ?: "localhost"
+    private val redisPort = System.getenv("REDIS_PORT")?.toInt() ?: 6379
+    private val jedis = Jedis(redisHost, redisPort)
 
     fun set(location: String, data: WeatherValues) {
         val jsonData = Json.encodeToString(data)  // Serializar a JSON
