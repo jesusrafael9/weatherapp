@@ -1,5 +1,4 @@
 # Proyecto Weatherapp
-Jesus
 ## Requerimientos
 
 - Docker
